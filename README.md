@@ -33,22 +33,24 @@ This project is intended to test the opentelemetry operator using auto-instrumen
     ```
     # kubectl apply -f azuremonitor-autoinstrumentation.yml
     ```
-5. Run the deployment with the opentelemetry annotation(In this example, we are using python):
+5. Run the deployments with the opentelemetry annotation(In this example, we are using python):
 
     ```
-    # kubectl apply -f example/app/cart-api.yml
+    # kubectl apply -f example/app/
     ```
 6. Port forward the application and make an api call:
 
     ```
-    # kubectl port-forward deployment.apps/cart-api 8080:8000
+    # kubectl port-forward deployment.apps/client-api 8080:8000
 
-    # curl --location --request POST 'localhost:8080/api/create/cart' \
+    # curl --location --request POST 'localhost:8080/create/cart' \
         --header 'Content-Type: application/json' \
         --data-raw '{
             "email": "myemail@email.com",
             "products": ["The last of us part I"]
         }'
+
+    # curl --location --request GET 'localhost:8080/get/carts?email=victor@brmalls.com.br'
     ```
 7. See the telemetry in azure application insights:
 
