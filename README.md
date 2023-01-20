@@ -1,5 +1,5 @@
 # otel-operator-azure-monito
-## Steps to install the oerator
+## Steps to configure the operator and auto-instrumentation
 
 1. Install certmanager:
     ```
