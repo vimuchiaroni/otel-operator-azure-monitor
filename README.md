@@ -1,5 +1,9 @@
-# otel-operator-azure-monito
-## Steps to configure the operator and auto-instrumentation
+# otel-operator-azure-monitor
+
+## **Description**
+This project is intended to test the opentelemetry operator using auto-instrumentation and exporting metrics to azure app insights.
+### **Steps to configure the operator and auto-instrumentation**
+
 
 1. Install certmanager:
     ```
