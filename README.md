@@ -2,7 +2,12 @@
 
 ## **Description**
 This project is intended to test the opentelemetry operator using auto-instrumentation and exporting metrics to azure app insights.
-### **Steps to configure the operator and auto-instrumentation**
+
+# Table of Contents
+1. [Steps to configure the operator and auto-instrumentation](#configuration)
+2. [References](#references)
+
+### **Steps to configure the operator and auto-instrumentation** <a name="configuration"></a>
 
 
 1. Install certmanager:
@@ -50,8 +55,18 @@ This project is intended to test the opentelemetry operator using auto-instrumen
             "products": ["The last of us part I"]
         }'
 
-    # curl --location --request GET 'localhost:8080/get/carts?email=victor@brmalls.com.br'
+    # curl --location --request GET 'localhost:8080/get/carts?email=myemail@email.com'
     ```
 7. See the telemetry in azure application insights:
 
 ![Alt text](images/app_insights_telemetry.png "App insights transaction")
+
+### References <a name="references"></a>
+
+https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-operator
+
+https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/azuremonitorexporter
+
+https://medium.com/opentelemetry/using-opentelemetry-auto-instrumentation-agents-in-kubernetes-869ec0f42377
+
+https://github.com/open-telemetry/opentelemetry-operator
