@@ -1,11 +1,10 @@
-# otel-operator-azure-monitor
-
-## **Description**
+# Table of Contents
+1. [Description](#description)
+2. [Steps to configure the operator and auto-instrumentation](#configuration)
+3. [References](#references)
+## **Description** <a name="description"></a>
 This project is intended to test the opentelemetry operator using auto-instrumentation and exporting metrics to azure app insights.
 
-# Table of Contents
-1. [Steps to configure the operator and auto-instrumentation](#configuration)
-2. [References](#references)
 
 ### **Steps to configure the operator and auto-instrumentation** <a name="configuration"></a>
 
