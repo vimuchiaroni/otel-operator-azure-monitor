@@ -47,7 +47,7 @@ This project is intended to test the opentelemetry operator using auto-instrumen
         --header 'Content-Type: application/json' \
         --data-raw '{
             "email": "myemail@email.com",
-            "products": ["last of us part I"]
+            "products": ["The last of us part I"]
         }'
     ```
 7. See the telemetry in azure application insights:
