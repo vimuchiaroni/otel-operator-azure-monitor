@@ -1,0 +1,28 @@
+apiVersion: opentelemetry.io/v1alpha1
+kind: OpenTelemetryCollector
+metadata:
+  name: otel
+spec:
+  # mode: sidecar
+  config: |
+    receivers:
+      otlp:
+        protocols:
+          http:
+    exporters:
+      logging:
+        loglevel: debug
+      azuremonitor:
+        instrumentation_key: <INSTRUMENTATION_KEY>
+    processors:
+      batch:
+    service:
+      telemetry:
+        logs:
+          level: "debug"
+      pipelines:
+        traces:
+          receivers: [otlp]
+          exporters: [logging, azuremonitor]
+          processors: [batch]
+
