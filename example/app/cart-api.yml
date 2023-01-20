@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: cart-api
+    app.kubernetes.io/name: cart-api
+  name: cart-api
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cart-api
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: cart-api
+      annotations:
+        instrumentation.opentelemetry.io/inject-python: "otel-collector"
+    spec:
+      containers:
+      - image: vimuchiaroni/cart-api:1.1
+        name: cart-api
+        ports:
+          - name: http
+            containerPort: 8000
